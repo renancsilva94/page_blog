@@ -17,73 +17,81 @@
 }
 
 body{
-  margin: auto;
+  max-width: 980px;
+  width: 100vw;
   background: var(--color2);
+  height: 100vh;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Lexend Deca', sans-serif;
 }
 
-#header {
+/* Header */
+#header{
   background: linear-gradient(88.27deg, var(--color0) 0%, var(--color1) 100%);
-  font-family: var(--fonte0);
-  position: absolute;
-  width: 1440px;
+  width: 100vw;
   height: 250px;
-  left: 0px;
-  top: 0px;
 }
+
+.info-header{
+  color: var(--color3);
+  display: flex;
+}
+
 
 .title{
-  position: absolute;
-  width: 133px;
-  height: 30px;
-  top: 41px;
-  left: 210px;
+  display:flex;
   color: var(--color3);
   font-family: var(--fonte0);
-  font-size: 24px;
-  line-height: 30px;
-  text-align: right;
-}
+  font-size: 18px;
+  line-height: 4;
+  padding: 20px 250px;
+} 
 
-.blog_button{
-  position: absolute;
+.blog{
+  position:absolute;
   top: 41px;
-  left: 1118px;
+  left: 1090px;
   color: var(--color3);
   font-family: var(--fonte0);
-  font-size: 24px;
-  line-height: 30px;
-  text-align: left;
-}
+  font-size: 28px;
+  line-height: 4;
+} 
 
-.campo{
+
+.pesquisa{
   position: absolute;
   width: 900px;
   height: 50px;
   top: 141px;
   left: 250px;
-  background: rgba(255, 255, 255, 0.3);
   border-radius: 5px;
+  
 }
  
 input {
-  top: 141px;
-  left: 250px;
-  width: 900px;
-  height: 50px;
-  padding: 10px;
+  position: absolute;
+  width: 850px;
+  height: 49px;
+  padding-left: 10px;
   background: rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
+  border:transparent;
+  border-radius: 0 5px 5px 0;
 }
 
-button {
+input::placeholder {
+  color: var(--color2);
+}
+
+ .button {
   height: 49px;
-  width: 50px;
-  position: absolute;   
+  width: 50px;  
   top: 0; 
   right: 0;
-  /* posiciona o botão em relação ao container, mas
-  como o campo está exatamente contido no container
-  o posicionamento se dá também em relação ao campo */
+  background: rgba(255, 255, 255, 0.3);
+  border: transparent;
+  border-radius: 5px 0 0 5px;
+
 }
 
 .search_blog{
@@ -103,25 +111,32 @@ button {
   font-size: 15px; 
 }
 
+.heart{
+  padding-left: 850px;
+  padding-top: 20px;
+}
+
+
 .news{
   position: absolute;
-  padding: 55px 15px;
+  padding: 10px 15px;
   font-family: var(--fonte0);
   color: var(--color5);
   font-weight: bold;
 }
 
 .content{
-  padding: 100px 15px;
+  padding: 60px 15px;
   font-family: var(--fonte0);
   color: var(--color4);
+  line-height: 25px;
 }
 
 .container_post1{
   position: absolute;
   width: 900px;
   height: 170px;
-  top: 350px;
+  top: 300px;
   left: 250px;
   background: var(--color3);
   box-shadow: 0px 0px 10px rgba(19, 19, 31, 0.05);
@@ -131,8 +146,8 @@ button {
 .container_post2{
   position: absolute;
   width: 900px;
-  height: 170px;
-  top: 590px;
+  height: 210px;
+  top: 530px;
   left: 250px;
   background: var(--color3);
   box-shadow: 0px 0px 10px rgba(19, 19, 31, 0.05);
@@ -143,7 +158,7 @@ button {
   position: absolute;
   width: 900px;
   height: 160px;
-  top: 820px;
+  top: 800px;
   left: 250px;
   background: var(--color3);
   box-shadow: 0px 0px 10px rgba(19, 19, 31, 0.05);
@@ -154,10 +169,31 @@ button {
   position: absolute;
   width: 900px;
   height: 210px;
-  top: 1040px;
+  top: 1020px;
   left: 250px;
   background: var(--color3);
   box-shadow: 0px 0px 10px rgba(19, 19, 31, 0.05);
   border-radius: 5px;
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+  header input {
+    height: 40px;
+  }
+
+  .box {
+    gap: 10px;
+  }
+
+  .box .date {
+    font-size: 1.4rem;
+  }
+  .box .title {
+    font-size: 1.8rem;
+    line-height: 2.25rem;
+  }
+  .box .description {
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+  }
+}
